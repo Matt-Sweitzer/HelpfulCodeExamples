@@ -15,9 +15,10 @@ data(mtcars)
 summary(mtcars$wt)
 
 # So we have a minimum value of 1.513, a maximum of 5.424, and it seems like this variable is rounded to the thousandths place
-# Lets start by rounding everything to the tenths place -- you can adjust the rounding by altering "digits"
+# Lets start by rounding everything to the tenths place -- you can adjust the rounding by altering "digits" and "nsmall"
+# Note: the "format()" function ensures that zeroes are not truncated when rounding
 
-mtcars$wt_Rounded <- round(mtcars$wt, digits = 1)
+mtcars$wt_Rounded <- format(round(mtcars$wt, digits = 1), nsmall=1)
 
 # Next we'll need to perform some operations to separate the ones place and the tenths place
 # To accomplish this, we'll use the function "strsplit" from base R
@@ -61,7 +62,7 @@ head(unlist(strsplit(mtcars$wt_Rounded, split="[.]"))[c(FALSE, TRUE)])
 # Note that this procedure will still work if you chose to use hundredths or thousandths place rounding
 
 mtcars$wt_Ones <- unlist(strsplit(mtcars$wt_Rounded, split="[.]"))[c(TRUE, FALSE)]
-mtcars$wt_Tenths <- unlist(strsplit(mtcars$wt_Rounded, split="[.]"))[c(FALSE, TRUE
+mtcars$wt_Tenths <- unlist(strsplit(mtcars$wt_Rounded, split="[.]"))[c(FALSE, TRUE)]
 
 # Let's take a quick look at the table of wt_Ones to get a sense of what our plot will look like:
 
