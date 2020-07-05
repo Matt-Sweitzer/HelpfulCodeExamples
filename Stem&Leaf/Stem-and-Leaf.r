@@ -202,7 +202,7 @@ for(i in 1:length(SL$Ones)){
 # You can also try adjusting the size of text using the "cex" parameter in "text()" functions
 # Finally, you can adjust the margins of the plot in the "par()" function by setting the values of the "mar" parameter -- these values adjust clockwise from the bottom side
 
-pdf("SL_Example.pdf", width=10, height=2.5, family="Times")
+cairo_pdf("SL_Example.pdf", width=10, height=2.5, family="Arial")
 par(mar=c(0.4, 0.2, 0.4, 0.2))
 plot(1, 1, type='n', xlim=c(1, max(SL$TLength)+1), ylim=c(1, length(SL$Ones)+1), main='', xlab='', ylab='', axes=F)
 text(1, length(SL$Ones)+1, "Stem", font=2, cex=1.25)
