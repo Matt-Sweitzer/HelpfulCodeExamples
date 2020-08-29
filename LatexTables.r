@@ -8,10 +8,10 @@ options(scipen = 3)
 
 
 
-postdict <- read_excel('/Users/Matthew/Box/Ballot initiatives project/Data/Eye Tracking Data/Postdiction/postdict_all_data_8_18_19.xlsx')
+postdict <- read_excel('/Users/Sweitzer/Box/Ballot initiatives project/Data/Eye Tracking Data/Postdiction/postdict_all_data_8_18_19.xlsx')
 postdict <-as.data.frame(postdict)
 
-predict <- read_excel('/Users/Matthew/Box/Ballot initiatives project/Data/Eye Tracking Data/Prediction/predict_all_data_8_18_19.xlsx')
+predict <- read_excel('/Users/Sweitzer/Box/Ballot initiatives project/Data/Eye Tracking Data/Prediction/predict_all_data_8_18_19.xlsx')
 predict <-as.data.frame(predict)
 
 #Subsets data to only include eye movements-related trials that could be corrected
@@ -182,18 +182,18 @@ rmat6<-summary(model6)
 ###TABLE S1
 
 tableS1<-cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{Eye Movement Measures}", "", "", "", "", "", "")
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first fixation duration}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first pass fixations}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first pass fixation duration}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. regression fixations}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. total fixations}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. total fixation duration}}", "--", "--", "--", "--", "--", "--"))
-tableS1<-rbind(tableS1, cbind("&", "--", "--", "--", "--", "--", "--"))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first fixation duration}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first pass fixations}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. first pass fixation duration}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. regression fixations}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. total fixations}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
+tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{\\multirow{2}{*}{\\rule{4pt}{0pt}Avg. total fixation duration}}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}", "\\multirow{2}{*}{--}"))
+tableS1<-rbind(tableS1, cbind("&", "", "", "", "", "", ""))
 
 est<-as.character(formatC(rmat1[2,1], format="fg", flag="#", digits=2))
 if(rmat1[2,4]>.1){est<-paste("$", est, "$", sep="")}
@@ -286,19 +286,17 @@ tableS1<-rbind(tableS1, rbind(c("&", sefn(1, "female"))))
 tableS1<-rbind(tableS1, cbind("\\midrule\\addlinespace[1ex]\\multicolumn{2}{l}{$N$}", length(model1$lm_res$residuals), length(model2$lm_res$residuals), length(model3$lm_res$residuals), length(model4$lm_res$residuals), length(model5$lm_res$residuals), length(model6$lm_res$residuals)))
 tableS1<-rbind(tableS1, cbind("\\addlinespace[1ex]\\multicolumn{2}{l}{$R^{2}_{adj}$}", formatC(summary(model1$lm_res)$adj.r.squared, format="fg", flag="#", digits=2), formatC(summary(model2$lm_res)$adj.r.squared, format="fg", flag="#", digits=2), formatC(summary(model3$lm_res)$adj.r.squared, format="fg", flag="#", digits=2), formatC(summary(model4$lm_res)$adj.r.squared, format="fg", flag="#", digits=2), formatC(summary(model5$lm_res)$adj.r.squared, format="fg", flag="#", digits=2), formatC(summary(model6$lm_res)$adj.r.squared, format="fg", flag="#", digits=2)))
 
-
-
 colnames(tableS1)<-c("&", "\\textbf{Model 1}", "\\textbf{Model 2}", "\\textbf{Model 3}", "\\textbf{Model 4}", "\\textbf{Model 5}", "\\textbf{Model 6}")
 
-tabS1 <- xtable(tableS1)
-align(tabS1) <- "lccccccc"
-caption(tabS1) <- "Study 1 Abstention Analyses with Preregistered Covariates"
+tabS1 <- xtable(tableS1, caption="Study 1 Abstention Analyses with Preregistered Covariates", label="tab:results1", align=c("XX", "c", "Y", "Y", "Y", "Y", "Y", "Y"))
 print(tabS1,
+  file="/Users/Sweitzer/Desktop/text.txt",
   tabular.environment = "tabularx",
   width = "\\linewidth",
   include.rownames = FALSE,
-  sanitize.text.function = function(x) {x},
+  sanitize.text.function = function(x){x},
   caption.placement = "top",
+  table.placement = "",
   booktabs = TRUE,
-  size="\\fontsize{8pt}{10pt}\\selectfont"
+  size="\\vspace{12pt}\\scriptsize"
 )
